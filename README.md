@@ -1,11 +1,11 @@
 # py_running_pace
-Small script giving pace-per-km a speed in km-per-hour from a time and a distance in km.
-It also ouputs expected times for usual running distances assuming average computed pace.
+Small script that computes pace per km from a time and distance in km.\\
+It also gives expected times for common running distances, assuming the average computed pace.
 
 ## Usage
 
 ```
-Running-pace: computes pace andnd speed given time [and distance], also as times for Marathon, Half-Marathon, 10K, 5K distances.
+Running-pace: computes pace and speed given time [and distance]. It also provides times for Marathon, Half-Marathon, 10K, 5K distances.
 
 options:
   -h, --help            show this help message and exit
@@ -14,7 +14,7 @@ options:
 ```
 
 ### Examples
-giving time for 1 km:
+giving time for 1 km (default):
 ```bash
 python .\running-time.py -t 00:04:17
 ```

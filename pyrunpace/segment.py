@@ -4,14 +4,7 @@
 
 """
 
-
-def seconds_to_hms(time_s) -> tuple:
-    hours = int(time_s / 3600)
-    seconds = int(time_s) - 3600 * hours
-    minutes = int(seconds / 60)
-    seconds -= 60 * minutes
-
-    return (hours, minutes, seconds)
+from pyrunpace import time
 
 
 class Segment:
@@ -72,14 +65,14 @@ class Segment:
 
         print("Time for usual distances")
         print("========================")
-        h, m, s = seconds_to_hms(self.__pace * 42.2)
+        h, m, s = time.seconds_to_hms(self.__pace * 42.2)
         print(f"\tTime Marathon: {h:02d}:{m:02d}:{s:02d}")
 
-        h, m, s = seconds_to_hms(self.__pace * 21.1)
+        h, m, s = time.seconds_to_hms(self.__pace * 21.1)
         print(f"\tTime Half-Marathon: {h:02d}:{m:02d}:{s:02d}")
 
-        h, m, s = seconds_to_hms(self.__pace * 10)
+        h, m, s = time.seconds_to_hms(self.__pace * 10)
         print(f"\tTime 10K: {h:02d}:{m:02d}:{s:02d}")
 
-        h, m, s = seconds_to_hms(self.__pace * 5)
+        h, m, s = time.seconds_to_hms(self.__pace * 5)
         print(f"\tTime 5K: {h:02d}:{m:02d}:{s:02d}")

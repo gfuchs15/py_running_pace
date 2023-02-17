@@ -9,8 +9,9 @@ Running-pace: computes pace and speed given time [and distance]. It also provide
 
 options:
   -h, --help            show this help message and exit
-  -t TIME, --time TIME  time hh:mm:ss or mm:ss or ss
+  -t TIME, --time TIME  time in hh:mm:ss or mm:ss or seconds
   -d DISTANCE, --distance DISTANCE
+                        distance in km (default: 1km)
 ```
 
 ### Examples

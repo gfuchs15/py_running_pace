@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Class segment, for a running segment defined by time and distance 
+"""Class segment, for a running segment defined by time and distance.
 
 
 """
@@ -8,9 +8,22 @@ from pyrunpace import time
 
 
 class Segment:
-    """_summary_"""
+    """class segment, defining a running segment at a given pace."""
 
     def __init__(self, distance=10, hours=1, minutes=0, seconds=0) -> None:
+        """__init__ segment class init.
+
+        Parameters
+        ----------
+        distance : int, optional
+            segment distance, by default 10
+        hours : int, optional
+            number of hours, by default 1
+        minutes : int, optional
+            number of minutes , by default 0
+        seconds : int, optional
+            number of seconds, by default 0
+        """
         self.__distance = float(distance)
         self.__time = int(3600.0 * hours + 60.0 * minutes + seconds)
         """compute integer HMS"""
@@ -24,7 +37,7 @@ class Segment:
         tmp = self.__minutes
         self.__minutes = self.__minutes % 60
         self.__hours += int(tmp / 60)
-        """pace in  seconds per km"""
+        """pace in seconds per km"""
         self.__pace = self.__time / self.__distance
         """compute modulo 60 HMS"""
         self.__pace_hours = int(self.__pace / 3600)
@@ -35,11 +48,14 @@ class Segment:
         self.__speed_kmh = 1.0 / float(self.__pace / 3600.0)
 
     def __setattr__(self, name, value) -> None:
-        """set attribute
+        """__setattr__ set attributes.
 
-        Args:
-            name (_type_): _description_
-            value (_type_): _description_
+        Parameters
+        ----------
+        name : _type_
+            _description_
+        value : _type_
+            _description_
         """
         self.__dict__[name] = value
 
@@ -54,8 +70,9 @@ class Segment:
     def __str__(self) -> str:
         return str(self.__distance)
 
-    def printInfo(self) -> None:
-        print("\tDistance: %.2f km" % (self.__distance))
+    def print_info(self) -> None:
+        """print_info print information about segment."""
+        print(f"\tDistance: %.2f km {self.__distance}")
         print(f"\tTime: {self.__hours:02d}:{self.__minutes:02d}:{self.__seconds:02d}")
         print(
             "\tPace: %02d:%02d:%02d/km"

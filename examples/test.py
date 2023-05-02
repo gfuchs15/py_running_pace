@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+"""small script for testing functionnality."""
 
-#%% pyrunpace needs to be installed using pip, or call from root
+# %% pyrunpace needs to be installed using pip, or call from root
 import sys
 import pyrunpace
 

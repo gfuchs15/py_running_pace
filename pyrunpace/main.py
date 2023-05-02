@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-
+"""main module."""
 
 import argparse
 from pyrunpace import segment
 
 
-def main():
-    """main function"""
+def main() -> None:
+    """main _summary_."""
     parser = argparse.ArgumentParser(
         description="Running-pace: computes pace and speed given time [and distance].\
             It also provides times for Marathon, Half-Marathon, 10K, 5K distances"
@@ -44,8 +44,8 @@ def main():
     else:
         seconds = int(float(args.time))
 
-    s = segment.Segment(args.distance, int(hours), int(minutes), int(seconds))
-    s.printInfo()
+    seg = segment.Segment(args.distance, int(hours), int(minutes), int(seconds))
+    seg.print_info()
 
 
 if __name__ == "__main__":

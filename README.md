@@ -2,6 +2,14 @@
 Small script that computes pace per km from a time and distance in km.\\
 It also gives expected times for common running distances, assuming the average computed pace.
 
+## Installation (optional)
+
+Build the wheel and then install it with pip:
+```bash
+python setup.py bdist_wheel
+pip instal ./dist/*.whl
+```
+
 ## Usage
 
 ```

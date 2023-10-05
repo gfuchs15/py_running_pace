@@ -80,7 +80,7 @@ class Segment:
         print(f"\tDistance: {self.distance} km")
         print(f"\tTime: {self.__hours:02d}:{self.__minutes:02d}:{self.__seconds:02d}")
         print(
-            f"\tPace: {self.__pace_hours:02d}{self.__pace_minutes:02d}{self.__pace_seconds:02d}/km"
+            f"\tPace: {self.__pace_hours:02d}:{self.__pace_minutes:02d}:{self.__pace_seconds:02f}/km"
         )
         print(f"\tSpeed: {self.__speed_kmh:.2f} km/h")
 

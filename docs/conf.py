@@ -6,14 +6,14 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Py Template"
-copyright = "2023, Fraunhofer IIS"
-author = "fcs1"
+project = "Py Running Pace"
+copyright = "2023, Guilaume Fuchs"
+author = "Guillaume Fuchs"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ["sphinx.ext.napoleon"]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
@@ -45,7 +45,7 @@ extensions += ["autodoc2"]  # https://sphinx-autodoc2.readthedocs.io/
 
 autodoc2_output_dir = "apidocs"
 autodoc2_packages = [
-    "../src/py_template",
+    "../pyrunpace",
 ]
 autodoc2_render_plugin = "md"
 

@@ -68,7 +68,7 @@ class Segment:
     def __str__(self) -> str:
         """__str__ magic method.
 
-        Returns
+        Returns:
         -------
         str
             _description_

@@ -2,11 +2,12 @@
 """main module."""
 
 import argparse
+
 from pyrunpace import segment
 
 
 def main() -> None:
-    """main _summary_."""
+    """Main _summary_."""
     parser = argparse.ArgumentParser(
         description="Running-pace: computes pace and speed given time [and distance].\
             It also provides times for Marathon, Half-Marathon, 10K, 5K distances"

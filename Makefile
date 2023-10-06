@@ -5,7 +5,7 @@ install-dev:	## install project including all development dependencies
 
 .PHONY: maintainability
 maintainability:  ## run maintainability checks
-	@radon cc --total-average -nB -s src
+	@radon cc --total-average -nB -s pyrunpace
 
 .PHONY: coverage coverage-ci
 coverage:	## collect coverage data and open report in browser
@@ -18,7 +18,7 @@ coverage-ci:
 
 .PHONY: lint
 lint:	## run static code checks
-	@ruff src tests
+	@ruff pyrunpace
 
 .PHONY: docs docs-live
 DOCS_TARGET?=build/docs

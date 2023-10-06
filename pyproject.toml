@@ -17,7 +17,7 @@ name = "pyrunpace" # required
 #
 # For a discussion on single-sourcing the version, see
 # https://packaging.python.org/guides/single-sourcing-package-version/
-version = "0.0.1" # required
+version = "0.0.2" # required
 
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
@@ -64,7 +64,7 @@ dependencies = []
 # dependencies). Users will be able to install these using the "extras"
 # syntax, for example:
 #
-#   $ pip install py_template[dev]
+#   $ python -m pip install pyrunpace[dev]
 #
 # Similar to `dependencies` above, these must be valid existing
 # projects.
@@ -82,7 +82,7 @@ pyrunpace = "pyrunpace.cli:main"
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = { "py_template" = ["*.dat"] }
+#package-data = { "py_template" = ["*.dat"] }
 
 [build-system]
 # These are the assumed default build requirements from pip:

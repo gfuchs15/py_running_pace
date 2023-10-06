@@ -1,5 +1,4 @@
-"""time module.
-"""
+"""time module."""
 
 
 def seconds_to_hms(time_s: float) -> tuple:
@@ -10,7 +9,7 @@ def seconds_to_hms(time_s: float) -> tuple:
     time_s : float
         time in seconds
 
-    Returns
+    Returns:
     -------
     tuple
         hours, miniutes, seconds format

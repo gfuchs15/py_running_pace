@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-"""main module."""
+"""Command line interface module."""
 
 import argparse
+
 from pyrunpace import segment
 
 
 def main() -> None:
-    """main _summary_."""
+    """Entry point for the application script.
+
+    Args:
+        input_str: string to reverse
+        capitalize: if true, capitalize letters of input_str
+    """
     parser = argparse.ArgumentParser(
         description="Running-pace: computes pace and speed given time [and distance].\
             It also provides times for Marathon, Half-Marathon, 10K, 5K distances"
@@ -46,7 +52,3 @@ def main() -> None:
 
     seg = segment.Segment(args.distance, int(hours), int(minutes), int(seconds))
     seg.print_info()
-
-
-if __name__ == "__main__":
-    main()

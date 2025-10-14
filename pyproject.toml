@@ -81,6 +81,7 @@ pyrunpace = "pyrunpace.cli:main"
 # This is configuration specific to the `setuptools` build backend.
 # If you are using a different build backend, you will need to change this.
 [tool.setuptools]
+packages = ["pyrunpace"]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
 #package-data = { "py_template" = ["*.dat"] }

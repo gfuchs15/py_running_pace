@@ -17,7 +17,7 @@ name = "pyrunpace" # required
 #
 # For a discussion on single-sourcing the version, see
 # https://packaging.python.org/guides/single-sourcing-package-version/
-version = "0.0.2" # required
+version = "0.0.3" # required
 
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
@@ -69,6 +69,7 @@ dependencies = []
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies]
+flask = ["Flask", "gunicorn"]
 dev = ["black", "radon", "ruff"]
 test = ["pytest", "pytest-cov", "coverage[toml]"]
 

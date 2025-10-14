@@ -8,7 +8,9 @@ from pyrunpace import time
 class Segment:
     """class segment, defining a running segment at a given pace."""
 
-    def __init__(self, distance=10, hours=1, minutes=0, seconds=0) -> None:
+    def __init__(
+        self, distance: float = 10, hours: int = 1, minutes: int = 0, seconds: int = 0
+    ) -> None:
         """__init__ segment class init.
 
         Parameters

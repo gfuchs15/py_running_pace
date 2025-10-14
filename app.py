@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import re
 
+from pyrunpace import segment
+
 app = Flask(__name__)
 
 
@@ -55,6 +57,7 @@ def calculate():
     try:
         time_str = request.form["time"]
         activity = request.form["activity"].lower()
+        distance_str = request.form["distance"]
 
         # Validate activity type
         valid_activities = ["running", "swimming", "biking"]
@@ -66,23 +69,47 @@ def calculate():
         # Parse time
         total_seconds = parse_time(time_str)
 
+        results = []
+        distance = float(distance_str)
+        seg = segment.Segment(distance, 0, 0, total_seconds)
+        # seg.print_info()
+        speed_ref, pace_ref = calculate_pace(distance, total_seconds)
+        if speed_ref is not None:
+            results.append(
+                {
+                    "distance": f"{distance} km",
+                    "distance_km": distance,
+                    "time": format_time(total_seconds),
+                    "speed_kmh": speed_ref,
+                    "pace_per_km": pace_ref,
+                }
+            )
+
         # Define standard distances for each activity (in km)
         distances = {
             "running": {"10K": 10, "HM": 21.097, "Marathon": 42.195},
-            "swimming": {"100m": 0.1, "500m": 0.5, "1500m": 1.5, "10K": 10},
+            "swimming": {
+                "100m": 0.1,
+                "500m": 0.5,
+                "1500m": 1.5,
+                "2K": 2,
+                "5K": 5,
+                "10K": 10,
+            },
             "biking": {"10K": 10, "40K": 40, "100K": 100},
         }
 
         # Calculate paces for standard distances
-        results = []
-        for name, distance in distances[activity].items():
-            speed, pace = calculate_pace(distance, total_seconds)
+        for name, distance_km in distances[activity].items():
+            speed, pace = calculate_pace(
+                distance_km, distance_km * total_seconds / distance
+            )
             if speed is not None:
                 results.append(
                     {
                         "distance": name,
-                        "distance_km": distance,
-                        "time": format_time(total_seconds),
+                        "distance_km": distance_km,
+                        "time": format_time(distance_km * total_seconds / distance),
                         "speed_kmh": speed,
                         "pace_per_km": pace,
                     }
